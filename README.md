@@ -50,7 +50,7 @@ This folder contains a Python script (`main.py`) to generate Fibonacci numbers. 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/CodeAlpha_Python_Internship_Tasks.git
+git clone https://github.com/your-Hifza-Khalid/CodeAlpha_Python_Internship_Tasks.git
 ```
 
 2. Navigate to the `Fibonacci_Generator` folder:
@@ -96,7 +96,7 @@ To get started with this project, follow these steps to set it up on your local 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/CodeAlpha_Python_Internship_Tasks.git
+git clone https://github.com/Hifza-Khalid/CodeAlpha_Python_Internship_Tasks.git
 ```
 
 2. Navigate into the project folder:
@@ -144,5 +144,5 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ## Contact 📧
 
-👤 Your Name – [GitHub](https://github.com/your-username)  
-📩 Email: your-email@example.com
+👤 Your Name – [GitHub](https://github.com/Hifza-Khalid)  
+📩 Email:hifzaofpk@gmail.com
