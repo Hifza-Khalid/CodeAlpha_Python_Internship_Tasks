@@ -1,5 +1,6 @@
 # 🚀 CodeAlpha_Python_Internship_Tasks
 
+
 📂 This repository contains tasks and solutions for the **CodeAlpha Python 3-Month Internship** 🚀. It focuses on **learning, growth**, and **real-world problem-solving**, helping to enhance Python skills through practical projects and challenges. 💡💻
 
 ---
@@ -184,8 +185,11 @@ If you encounter issues, please open an issue on GitHub.
 ---
 
 ## 📜 License
+  
+This project is licensed under the MIT License.  
 
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more details.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 
 ---
 
