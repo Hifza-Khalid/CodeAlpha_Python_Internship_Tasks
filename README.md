@@ -1,6 +1,6 @@
 # 🚀 CodeAlpha_Python_Internship_Tasks
 
-This repository contains tasks and solutions for the **CodeAlpha Python Internship**. It includes Python scripts for various problems and projects worked on during the internship.
+📂 This repository contains tasks and solutions for the **CodeAlpha Python 3-Month Internship** 🚀. It focuses on **learning, growth**, and **real-world problem-solving**, helping to enhance Python skills through practical projects and challenges. 💡💻
 
 ---
 
