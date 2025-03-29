@@ -6,10 +6,10 @@ from PIL import Image, ImageTk
 
 # Global variables
 fibonacci_series = []
-dark_mode = True  # Start with dark mode
+dark_mode = True  # Default to dark mode
 
 def generate_fibonacci():
-    """Generate Fibonacci sequence and display it when the button is clicked."""
+    """Generate Fibonacci sequence and display it."""
     try:
         n = int(entry.get().strip())
         if n < 0:
@@ -47,7 +47,7 @@ def save_to_file():
         file_path = filedialog.asksaveasfilename(defaultextension=".txt",
                                                  filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
         if file_path:
-            with open(file_path, "w") as file:
+            with open(file_path, "w", encoding="utf-8") as file:
                 file.write("Fibonacci Sequence:\n")
                 file.write(" → ".join(map(str, fibonacci_series)))
             messagebox.showinfo("Saved", f"Fibonacci sequence saved to {file_path}")
@@ -55,15 +55,15 @@ def save_to_file():
 def plot_fibonacci():
     """Plot Fibonacci sequence growth."""
     if fibonacci_series:
-        plt.figure(figsize=(8, 5), facecolor=("#FFFFFF" if not dark_mode else "#0A192F"))
+        plt.figure(figsize=(8, 5), facecolor=("white" if not dark_mode else "#0A192F"))
         plt.plot(fibonacci_series, marker='o', linestyle='-', color='#007BFF', markersize=8, linewidth=2)
-        plt.title("Fibonacci Sequence Growth", fontsize=14, color=("#000000" if not dark_mode else "white"))
-        plt.xlabel("Index", fontsize=12, color=("#000000" if not dark_mode else "white"))
-        plt.ylabel("Value", fontsize=12, color=("#000000" if not dark_mode else "white"))
+        plt.title("Fibonacci Sequence Growth", fontsize=14, color=("black" if not dark_mode else "white"))
+        plt.xlabel("Index", fontsize=12, color=("black" if not dark_mode else "white"))
+        plt.ylabel("Value", fontsize=12, color=("black" if not dark_mode else "white"))
         plt.grid(True, linestyle='--', alpha=0.6)
-        plt.gca().set_facecolor("#FFFFFF" if not dark_mode else "#0A192F")
-        plt.xticks(color=("#000000" if not dark_mode else "white"))
-        plt.yticks(color=("#000000" if not dark_mode else "white"))
+        plt.gca().set_facecolor("white" if not dark_mode else "#0A192F")
+        plt.xticks(color=("black" if not dark_mode else "white"))
+        plt.yticks(color=("black" if not dark_mode else "white"))
         plt.show()
 
 def toggle_theme():
@@ -71,28 +71,32 @@ def toggle_theme():
     global dark_mode
     dark_mode = not dark_mode
     
-    bg_color = "#0A192F" if dark_mode else "#FFFFFF"
-    text_color = "#4CA1AF" if dark_mode else "#333333"
-    entry_bg = "#112D4E" if dark_mode else "#F7F7F7"
-    button_bg = "#1B4965" if dark_mode else "#E0E0E0"
-    button_fg = "white" if dark_mode else "#333333"
-    
-    root.configure(bg=bg_color)
-    label.config(bg=bg_color, fg=text_color)
-    entry.config(bg=entry_bg, fg="white" if dark_mode else "black", insertbackground="white" if dark_mode else "black")
-    output_text.config(bg=entry_bg, fg="white" if dark_mode else "black")
-    button_frame.config(bg=bg_color)
-    
-    for widget in button_frame.winfo_children():
-        widget.config(bg=button_bg, fg=button_fg)
-    
-    theme_button.config(image=moon_img if dark_mode else sun_img, bg=bg_color)
+    if dark_mode:
+        root.configure(bg="#0A192F")
+        label.config(bg="#0A192F", fg="#4CA1AF")
+        entry.config(bg="#112D4E", fg="white", insertbackground="white")
+        output_text.config(bg="#112D4E", fg="white")
+        button_frame.config(bg="#0A192F")
+        theme_button.config(image=moon_img, bg="#0A192F")
+        
+        for widget in button_frame.winfo_children():
+            widget.config(bg="#1B4965", fg="white")
+    else:
+        root.configure(bg="white")
+        label.config(bg="white", fg="black")
+        entry.config(bg="white", fg="black", insertbackground="black")
+        output_text.config(bg="white", fg="black")
+        button_frame.config(bg="white")
+        theme_button.config(image=sun_img, bg="white")
+        
+        for widget in button_frame.winfo_children():
+            widget.config(bg="#E0E0E0", fg="black")
 
 # Create the main window
 root = tk.Tk()
 root.title("Fibonacci Generator")
 root.geometry("500x550")
-root.configure(bg="#0A192F")
+root.configure(bg="#0A192F")  # Default dark mode
 root.resizable(False, False)
 
 # Load images
